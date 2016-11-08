@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -20,9 +20,9 @@ module.exports = function (grunt) {
     },
     pkg: grunt.file.readJSON('package.json'),
     banner: '/**\n' +
-    ' * <%= pkg.name %> v<%= pkg.version %>\n' +
-    ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-    ' */\n',
+      ' * <%= pkg.name %> v<%= pkg.version %>\n' +
+      ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+      ' */\n',
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -90,14 +90,14 @@ module.exports = function (grunt) {
     },
 
     // Create OS notifications alerting progress
-    notify: {
-      default: {
-        options: {
-          title: '<%= pkg.title %>',
-          message: 'SUCCESS: Grunt Complete'
-        }
-      }
-    }
+    // notify: {
+    //   default: {
+    //     options: {
+    //       title: '<%= pkg.title %>',
+    //       message: 'SUCCESS: Grunt Complete'
+    //     }
+    //   }
+    // }
 
   });
 
@@ -105,8 +105,8 @@ module.exports = function (grunt) {
     'jshint',
     'karma:unit',
     'strip_code',
-    'uglify',
-    'notify:default'
+    'uglify'
+    // 'notify:default'
   ]);
 
   grunt.registerTask('test', [
